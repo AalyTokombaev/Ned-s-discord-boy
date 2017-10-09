@@ -19,13 +19,17 @@ async def on_member_join(member : discord.Member):
     """Welcomes new arrivals and changes their nickname if a character in it isn't default ASCII."""
     # TODO: Stop using system_channel as message destination.
     # TODO: Add some more funcionality (auto-roles, anti-ban evasion)
-    # TODO: Add on_member_leave
+    # TODO: Add on_member_remove
     channel = member.guild.system_channel
     for character in member.name:
         if character not in printable:
             await channel.send(f"Due to non-ascii character \"{character}\" in your name we've changed it to Rule 7.")
             await member.edit(reason='Rule 7', nick='Rule 7')
     await channel.send(f'{member.mention} has joined {member.guild}!')
+
+@bot.event
+async def on_member_remove(member: discord.Member):
+    pass
 
 
 @bot.command()
