@@ -34,7 +34,7 @@ async def set_channel(ctx, channel_name : str):
     # TODO: Change this function to not use the system_channel as a pointer to welcomes, since it might (and probably is
     # ) be used for other purposes.
     # TODO: Set up some sort of options file so we don't have to call this everytime the bot is launched.
-    # find_channel = discord.utils.get(ctx.message.guild.text_channels, name=channel_name)
+    find_channel = discord.utils.get(ctx.message.guild.text_channels, name=channel_name)
     try:
         await ctx.message.guild.edit(system_channel=find_channel)
     except:
@@ -45,7 +45,7 @@ async def set_channel(ctx, channel_name : str):
 
 @bot.command()
 async def aesthetics(ctx, *args):
-    """Novelty command and Ned's proudest work. It mainly servers as a "Hello World!" for Ned."""
+    """Novelty command and Ned's proudest work. It mainly serves as a "Hello World!" for Ned."""
     channel = ctx.message.channel
     decorated_text = ''.join([f' _`{character}`_ ' for character in ' '.join(list(args))])
     await channel.send(decorated_text)
@@ -63,6 +63,5 @@ async def quit(ctx):
     await bot.logout()
 
 
-bot.run('MzMyODkyNDQ2OTg1ODE0MDI2.DEEt0g.EBLwB0MgDIzwRhBo3wtRrOiTyFE')
+bot.run('Token')
 
-#MzMyODkyNDQ2OTg1ODE0MDI2.DEEt0g.EBLwB0MgDIzwRhBo3wtRrOiTyFE
