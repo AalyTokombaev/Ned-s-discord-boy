@@ -34,8 +34,8 @@ async def on_member_remove(member: discord.Member):
 @bot.command()
 async def set_channel(ctx, channel_name : str):
     """Set's the servers `system_channel`. This is currently used to send messages upon client events."""
-    # TODO: Change this function to not use the system_channel as a pointer to welcomes, since it might (and probably is
-    # ) be used for other purposes.
+    # TODO: Change this function to not use the system_channel as a destination to welcomes, since it might (and probably is
+    # being used) be used for other purposes.
     # TODO: Set up some sort of options file so we don't have to call this everytime the bot is launched.
     find_channel = discord.utils.get(ctx.message.guild.text_channels, name=channel_name)
     try:
