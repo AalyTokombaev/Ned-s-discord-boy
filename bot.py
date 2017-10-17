@@ -30,16 +30,6 @@ async def on_member_join(member: discord.Member):
     await channel.send(f'{member.mention} has joined {member.guild}!')
 
 
-#@bot.event
-#async def on_message(message):
-#    print(message)
-#    if message.author.id == 332892446985814026:
-#        return
-#    if message.attachments:
-#        for atch in message.attachments:
-#            await message.channel.send(atch.filename)
-#    await message.channel.send(message)
-
 @bot.event
 async def on_member_remove(member: discord.Member):
     channel = member.guild.system_channel
