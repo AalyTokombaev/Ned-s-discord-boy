@@ -91,7 +91,7 @@ async def needsmoreedge(ctx):
     image = Image.open('some_file.jpeg')
     if image:
         edge_image = image.filter(ImageFilter.EDGE_ENHANCE_MORE)
-        edge_image = edge_image.save('returned_file.jpeg')
+        edge_image.save('returned_file.jpeg')
         await ctx.message.channel.send(file=discord.File('returned_file.jpeg'))
 
 
