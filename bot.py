@@ -85,7 +85,7 @@ async def needsmoreedge(ctx):
         if message.attachments:
             for attch in message.attachments:
                #This kinda takes an image at random, I think I'll keep the history limit=2 for the momment
-               #It seems to pick the lastest image first. If you call the command again it'll go to the next one.
+               #It seems to pick the oldest image first. If you call the command again it'll go to the next one.
                #TODO: Figure out a way to only take the last image.
                 await attch.save('some_file.jpeg')
     image = Image.open('some_file.jpeg')
