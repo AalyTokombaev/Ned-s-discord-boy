@@ -91,6 +91,8 @@ async def iterate(ctx):
 @bot.command()
 async def needsmoreedge(ctx, edge=2):
     """"Adds much needed edge to the last posted image (still kinda buggy bear with me"""
+    #TODO: Rewrite this function
+    #It's really long and I'm pretty sure half of the code isn't doing anything/doing something wrong.
     if type(edge) != type(int):
         try:
             edge = int(edge)
